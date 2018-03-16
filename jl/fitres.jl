@@ -8,7 +8,7 @@
 ### OUTPUT: array (or DataFrame).
 ###
 ### RECOMMENDED CITATION:
-###  Schnitman, Robert (2018). fitres.jl. https://github.com/robertschnitman/diagnosejl
+###  Schnitman, Robert (2018). fitres.jl. https://github.com/robertschnitman/diagnoserjl
 #####################################################################################
 
 function fitres(model, dataframe = false)
