@@ -11,11 +11,13 @@
 ###  Schnitman, Robert (2018). fitres.jl. https://github.com/robertschnitman/diagnoserjl
 #####################################################################################
 
+##### === BEGIN === #####
+
 function fitres(model, dataframe = false)
 
 ### 1. Set up variables to include in the final output ###
   fit = predict(model)      # Fitted values.
-  res = residuals(model_lm) # Residuals.
+  res = residuals(model)    # Residuals.
   act = res + fit           # Actual values.
   rem = res./act            # Residuals Margins (Residuals %). The dot(.) vectorizes the division.
 
@@ -27,3 +29,5 @@ function fitres(model, dataframe = false)
   end
   
 end
+
+##### === END === #####
