@@ -25,12 +25,13 @@ function modeldf(model, conf = 0.95)
   ### Define certain variables for the final dataframe for easier referencing ###
   vnm       = coeftable(model).rownms        
   b         = coef(model_lm)
-  test_stat = coeftable(model).cols[4]
+  test_stat = coeftable(model).cols[3]
+  p         = coeftable(model).cols[4]
   cil       = confint(model_lm, conf)[1:end, 1]
   ciu       = confint(model_lm, conf)[1:end, end]    
 
   ### Set up dataframe ###
-  mdf = DataFrame(terms = vnm, beta = b, se = stderr(model), moe = ciu .- b, test = test_stat, ci_lower = cil, ci_upper = ciu)
+  mdf = DataFrame(terms = vnm, beta = b, se = stderr(model), moe = ciu .- b, test = test_stat, p = p, ci_lower = cil, ci_upper = ciu)
   # beta + moe = ciu --> moe = ciu - beta.
 
   # Rename test statistic to match test used in model.
