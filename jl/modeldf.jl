@@ -37,6 +37,6 @@ function modeldf(model, conf = 0.95)
   # Rename test statistic to match test used in model.
   rename(mdf, [:test], [Symbol(string(coeftable(model_lm).colnms[3])[1])])
 
-  end
+end
   
 ##### === END === #####
