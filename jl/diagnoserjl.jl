@@ -7,5 +7,6 @@ module diagnoserjl
 	
 	include("fitres.jl")
 	include("modeldf.jl")
+        include("validate.jl")
 	
 end # module
