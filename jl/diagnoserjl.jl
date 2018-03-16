@@ -1,6 +1,6 @@
 __precompile__()
 
-module diagnosejl
+module diagnoserjl
 	using DataFrames
 	using Gadfly
 	using GLM
