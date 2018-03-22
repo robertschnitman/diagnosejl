@@ -4,11 +4,15 @@
 ***Recommended Citation:  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schnitman, Robert (2018). diagnoserjl v0.0.0.5. https://github.com/robertschnitman/diagnoserjl***
 
-Based on the original R library, `diagnoser` (https://github.com/robertschnitman/diagnoser).
+# Outline
+0. Requisites/Recommendations and Package Imports
+1. Introduction
+2. diagnose()
+3. fitres()
+4. modeldf()
+5. validate()
 
-Motivation: make an equivalent package for Julia for pedagogical purposes and to take advantage of its capabilities.
-
-## 0. Requisites/Recommendations and Package Imports
+## 0. Julia Version and Package Imports
 *Recommends*: Julia ≥ 0.6.2.
 
 *Package imports*
@@ -16,7 +20,13 @@ Motivation: make an equivalent package for Julia for pedagogical purposes and to
   * Gadfly     ≥ 0.6.5
   * GLM        ≥ 0.8.1
 
-## 1. diagnose()
+
+## 1. Introduction
+Based on the original R library, `diagnoser` (https://github.com/robertschnitman/diagnoser).
+
+Motivation: make an equivalent package for Julia for pedagogical purposes and to take advantage of its capabilities.
+
+## 2. diagnose()
 ```julia
 file = "stata_auto.csv"
 auto = readtable(file)
@@ -27,7 +37,7 @@ diagnose(model_lm)
 ```
 ![](img/diagnose.png)
 
-## 2. modeldf()
+## 3. modeldf()
 
 ```julia
 modeldf(model_lm, 0.95) # default confidence interval is 0.95.
@@ -39,7 +49,7 @@ modeldf(model_lm, 0.95) # default confidence interval is 0.95.
 | 2   | mpg         | -49.5122 | 86.156   | 171.79  | -221.302 | 122.278  | -0.574681 | 0.5673 | 
 | 3   | weight      | 1.74656  | 0.641354 | 1.27882 | 0.467736 | 3.02538  | 2.72324   | 0.0081 | 
 
-## 3. fitres()
+## 4. fitres()
 
 ```julia
 fitres(model_lm, true) # Outputs a dataframe. The default is "false", which returns an array.
@@ -72,7 +82,7 @@ fitres(model_lm, true) # Outputs a dataframe. The default is "false", which retu
 | 73  | 4183.92 | 2666.08   | 0.389209         | 
 | 74  | 6640.95 | 5354.05   | 0.446357         | 
 
-## 4. validate()
+## 5. validate()
 
 ```julia
 validate(model_lm, false) # By default, the output (dataframe = false) returns an array. 
