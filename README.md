@@ -52,7 +52,7 @@ modeldf(model_lm, 0.95) # default confidence interval is 0.95.
 ## 4. fitres()
 
 ```julia
-fitres(model_lm, true) # Outputs a dataframe. The default is "false", which returns an array.
+fitres(model_lm) # Outputs a dataframe: fitted values, residuals, and residuals margin (i.e. residuals %).
 ```
 |     |         |           |                  | 
 |-----|---------|-----------|------------------| 
@@ -81,6 +81,27 @@ fitres(model_lm, true) # Outputs a dataframe. The default is "false", which retu
 | 72  | 4079.12 | 617.878   | 0.131547         | 
 | 73  | 4183.92 | 2666.08   | 0.389209         | 
 | 74  | 6640.95 | 5354.05   | 0.446357         | 
+
+```julia
+fr = fitres(model_lm, auto) # If the original dataset from the model is specified,
+                            #   then the fitted values & residuals are merged with it.
+                            
+fr[1:10, [:price, :mpg, :weight, :fit, :residual, :residual_margin]]
+
+```
+| Row |  price |  mpg |  weight |  fit    |  residual  | residual_margin | 
+|-----|--------|------|---------|---------|------------|-----------------| 
+| 1   | 4099   | 22   | 2930    | 5974.22 | -1875.22   | -0.457482       | 
+| 2   | 4749   | 17   | 3350    | 6955.33 | -2206.33   | -0.464589       | 
+| 3   | 3799   | 22   | 2640    | 5467.72 | -1668.72   | -0.439251       | 
+| 4   | 4816   | 20   | 3250    | 6632.14 | -1816.14   | -0.377106       | 
+| 5   | 7827   | 15   | 4080    | 8329.35 | -502.347   | -0.0641813      | 
+| 6   | 5788   | 18   | 3670    | 7464.72 | -1676.72   | -0.289689       | 
+| 7   | 4453   | 26   | 2230    | 4553.58 | -100.578   | -0.0225865      | 
+| 8   | 5189   | 20   | 3280    | 6684.54 | -1495.54   | -0.288213       | 
+| 9   | 10372  | 16   | 3880    | 7930.52 | 2441.48    | 0.235391        | 
+| 10  | 4082   | 19   | 3400    | 6943.64 | -2861.64   | -0.701038       | 
+
 
 ## 5. validate()
 
