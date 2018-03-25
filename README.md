@@ -2,15 +2,16 @@
 ***Robert Schnitman***  
 ***2018-03-16***  
 ***Recommended Citation:  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schnitman, Robert (2018). diagnoserjl v0.0.0.5. https://github.com/robertschnitman/diagnoserjl***
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schnitman, Robert (2018). diagnoserjl v0.0.1.0. https://github.com/robertschnitman/diagnoserjl***
 
 # Outline
-0. Requisites/Recommendations and Package Imports
+0.Julia Version and Package Imports
 1. Introduction
 2. diagnose()
 3. fitres()
 4. modeldf()
 5. validate()
+6. Conclusion
 
 ## 0. Julia Version and Package Imports
 *Recommends*: Julia ≥ 0.6.2.
@@ -117,6 +118,7 @@ validate(model_lm, false) # By default, the output (dataframe = false) returns a
 |  :ar2             | [0.273485]  | 
 |  :r2              | [0.293389]  | 
 |  :rmse            | [2462.54]   | 
+|  :mad             | [1389.76]   | 
 |  :mae             | [1966.89]   | 
 |  :medianpe        | [-0.105916] | 
 |  :mpe             | [-0.11274]  | 
@@ -125,4 +127,8 @@ validate(model_lm, false) # By default, the output (dataframe = false) returns a
 |  :residual_median | [-503.983]  | 
 |  :residual_sd     | [2479.35]   | 
 
+## 6. Conclusion
 
+The hope of this library is  to (1) minimize the programming tedium in statistical reporting; (2) assist people in diagnosing the validity of their results; and (3) inspire developers and end-users alike to apply Julia in their work.
+
+*End of Document*
