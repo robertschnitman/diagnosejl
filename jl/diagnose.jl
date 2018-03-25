@@ -1,10 +1,26 @@
+"""
+    diagnose(model)
+	
+Scatterplots of fit vs. residuals/residuals margin, as well as histograms of residuals/residuals margin
+
+INPUT: GLM object.
+
+OUTPUT: 2x2 graph.
+
+# Examples
+See https://github.com/robertschnitman/diagnoserjl.
+
+"""
+
+
 ########################################################################################
 ### Robert Schnitman
 ### 2018-03-21
 ###
-### PURPOSE: Scatterplots of fit vs. residuals/residuals margin, as well as histograms of residuals/residuals margin
+### PURPOSE: Scatterplots of fit vs. residuals/residuals margin, as well as histograms of residuals/residuals margin.
 ###
 ### INPUT: GLM object.
+### OUTPUT: 2x2 graph.
 ###
 ### RECOMMENDED CITATION:
 ###  Schnitman, Robert (2018). diagnose.jl. https://github.com/robertschnitman/diagnoserjl
