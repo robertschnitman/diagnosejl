@@ -5,11 +5,13 @@
 Produce common model statistics such as R^2, RMSE, and MPE in a vector. The model input is a GLM object, outputting to an array if dataframe = false.
 
 # Definitions
-  ar2             = Adjusted R-Squared.
+  ar2             = Adjusted R-Squared.  
+  
+  mad             = Median Absolute Deviation.  
   
   mae             = Mean Absolute Error.  
   
-  medianpe        = Median Absolute Error.<br/>
+  medianpe        = Median Absolute Error.
   
   mpe             = Mean Percentage Error.  
   
@@ -55,7 +57,7 @@ function validate(model, dataframe = false)
   r      = residuals(model) # Easier to read how the final statistics are computed.
   depvar = model.mf.df[1]   # Same as above.
   
-  
+  mad             = median(abs.(r .- median(r)))
   mae             = mean(abs.(r))
   medianpe        = median(r./depvar)
   mpe             = mean(r./depvar)
@@ -71,7 +73,7 @@ function validate(model, dataframe = false)
   
   ### 3. Print Output ###  
   
-  common = DataFrame(n = n, ar2 = ar2, r2 = rsq, rmse = rmse, mae = mae, medianpe = medianpe, mpe = mpe, sdpe = sdpe, residual_mean = residual_mean, residual_median = residual_median, residual_sd = residual_sd)
+  common = DataFrame(n = n, ar2 = ar2, r2 = rsq, rmse = rmse, mad = mad, mae = mae, medianpe = medianpe, mpe = mpe, sdpe = sdpe, residual_mean = residual_mean, residual_median = residual_median, residual_sd = residual_sd)
   
   pivotdf = DataFrame(statistic = names(common), value = round.(common[1, :].columns, 6))
   
