@@ -1,8 +1,29 @@
+"""
+
+    validate(model, false)
+	
+Produce common model statistics such as R^2, RMSE, and MPE in a vector. The model input is a GLM object, outputting to an array if dataframe = false.
+
+# Definitions
+  ar2             = Adjusted R-Squared.
+  mae             = Mean Absolute Error.
+  medianpe        = Median Absolute Error.
+  mpe             = Mean Percentage Error.
+  n               = Number of Observations (that are used in the model object).
+  residual_mean   = Mean Residual.
+  residual_median = Median Residual.
+  residual_sd     = Standard Deviation of the Residual.
+  rmse            = Root Mean Square Error.
+  rsq             = R-Squared.
+  sdpe            = Standard Deviation of the Percentage Error.
+
+"""
+
 ########################################################################################
 ### Robert Schnitman
 ### 2018-03-16
 ###
-### PURPOSE: Produce common model statistics such as F, R^2, and RMSE in a vector.
+### PURPOSE: Produce common model statistics such as R^2, RMSE, and MPE in a vector.
 ###
 ### RECOMMENDED CITATION:
 ###  Schnitman, Robert (2018). validate.jl. https://github.com/robertschnitman/diagnoserjl
