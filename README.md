@@ -17,7 +17,7 @@
 *Recommends*: Julia ≥ 0.6.2.
 
 *Package imports*
-  * Dataframes ≥ 0.10.1
+  * DataFrames ≥ 0.10.1
   * Gadfly     ≥ 0.6.5
   * GLM        ≥ 0.8.1
 
