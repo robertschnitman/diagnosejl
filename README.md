@@ -108,16 +108,21 @@ fr[1:10, [:price, :mpg, :weight, :fit, :residual, :residual_margin]]
 ```julia
 validate(model_lm, false) # By default, the output (dataframe = false) returns an array. 
                           # Set to "true" for a dataframe.
+                          # See help documentation (?validate) for statistics definitions.
 ```
 
 |                   |             | 
 |-------------------|-------------| 
-| :n                |  [74.0]     | 
-|  :ar2             |  [0.273485] | 
-|  :r2              |  [0.293389] | 
-|  :rmse            |  [2462.54]  | 
-|  :mae             |  [1966.89]  | 
-|  :mpe             |  [-0.11274] | 
-|  :residual_mean   |  [-0.0]     | 
-|  :residual_median |  [-503.983] | 
-|  :residual_sd     |  [2479.35]  | 
+| :n                | [74.0]      | 
+|  :ar2             | [0.273485]  | 
+|  :r2              | [0.293389]  | 
+|  :rmse            | [2462.54]   | 
+|  :mae             | [1966.89]   | 
+|  :medianpe        | [-0.105916] | 
+|  :mpe             | [-0.11274]  | 
+|  :sdpe            | [0.358649]  | 
+|  :residual_mean   | [-0.0]      | 
+|  :residual_median | [-503.983]  | 
+|  :residual_sd     | [2479.35]   | 
+
+
