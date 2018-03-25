@@ -27,7 +27,9 @@ Produce common model statistics such as R^2, RMSE, and MPE in a vector. The mode
   
   sdpe            = Standard Deviation of the Percentage Error.  
   
-
+# Examples
+See https://github.com/robertschnitman/diagnoserjl.
+  
 """
 
 ########################################################################################
