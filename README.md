@@ -5,7 +5,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schnitman, Robert (2018). diagnoserjl v0.0.1.0. https://github.com/robertschnitman/diagnoserjl***
 
 # Outline
-0.Julia Version and Package Imports
+0. Julia Version and Package Imports
 1. Introduction
 2. diagnose()
 3. fitres()
