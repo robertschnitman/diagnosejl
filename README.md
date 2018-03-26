@@ -5,7 +5,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schnitman, Robert (2018). diagnoserjl v0.0.1.0. https://github.com/robertschnitman/diagnoserjl***
 
 # Outline
-0. Julia Version and Package Imports
+0. Installation (*under construction*)
 1. Introduction
 2. diagnose()
 3. fitres()
@@ -13,14 +13,21 @@
 5. validate()
 6. Conclusion
 
-## 0. Julia Version and Package Imports
-*Recommends*: Julia ≥ 0.6.2.
+## 0. Installation (*under construction*)
 
-*Package imports*
-  * DataFrames ≥ 0.10.1
-  * Gadfly     ≥ 0.6.5
-  * GLM        ≥ 0.8.1
+```julia
+# Proposed installation instructions are as follows.
 
+# Julia ≥ 0.6.2.
+# Package imports
+#   DataFrames ≥ 0.10.1
+#   Gadfly     ≥ 0.6.5
+#   GLM        ≥ 0.8.1
+  
+# Pkg.clone("https://github.com/robertschnitman/diagnoserjl")
+# using diagnoserjl # load library.
+
+```
 
 ## 1. Introduction
 Based on the original R library, `diagnoser` (https://github.com/robertschnitman/diagnoser).
