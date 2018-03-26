@@ -6,6 +6,10 @@ using DataFrames
 using Gadfly
 using GLM
 	
+import DataFrames
+import Gadfly
+import GLM
+
 include("diagnose.jl")
 include("fitres.jl")
 include("modeldf.jl")
