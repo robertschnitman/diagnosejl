@@ -37,10 +37,10 @@ See https://github.com/robertschnitman/diagnoserjl.
 function fitres(model, data = nothing)
 
 ### 1. Set up variables to include in the final output ###
-  fit = predict(model)      # Fitted values.
-  res = residuals(model)    # Residuals.
-  act = res + fit           # Actual values.
-  rem = res./act            # Residuals Margins (Residuals %). The dot(.) vectorizes the division.
+  fit = predict(model)   # Fitted values.
+  res = residuals(model) # Residuals.
+  act = res + fit        # Actual values.
+  rem = res./act         # Residuals Margins (Residuals %). The dot(.) vectorizes the division.
 
 ### 2. Return array or merged DataFrame ###  
   datatype = string(typeof(data))
@@ -50,10 +50,10 @@ function fitres(model, data = nothing)
   if (data == nothing)  
   
     fitresm # Array was the original plan a la` the matrix output in its R equivalent, 
-	        #   but unnamed column headers in base Julia was a problem (i.e. which 
-			#   column belongs to fitted values, etc?).
-	        # NamedArrays.jl could be an option, but DataFrames has more user reach.
-			# Users can always use convert() to obtain an Array instead.
+	    #   but unnamed column headers in base Julia was a problem (i.e. which 
+	    #   column belongs to fitted values, etc?).
+	    # NamedArrays.jl could be an option, but DataFrames has more user reach.
+	    # Users can always use convert() to obtain an Array instead.
 	
   elseif (datatype == "DataFrames.DataFrame")    
 	
