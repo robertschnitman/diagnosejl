@@ -38,19 +38,19 @@ function diagnose(model)
   fit = predict(model)      # Fitted values.
   res = residuals(model)    # Residuals.
   act = res + fit           # Actual values. 
-  rem = res./act             # Residuals Margin
+  rem = res./act            # Residuals Margin
   
   
   ### 3. Print Output ###
   rvf1 = plot(x = fit, y = res, 
               Geom.point, Geom.smooth,
-			  Guide.xlabel("Fitted Values"), Guide.ylabel(""), 
-			  Guide.title("Residuals vs. Fitted Values"))
+	      Guide.xlabel("Fitted Values"), Guide.ylabel(""), 
+	      Guide.title("Residuals vs. Fitted Values"))
 			  
   rvf2 = plot(x = fit, y = rem, 
               Geom.point, Geom.smooth,
-			  Guide.xlabel("Fitted Values"), Guide.ylabel(""),
-			   Guide.title("Residuals (%) vs. Fitted Values"))
+	      Guide.xlabel("Fitted Values"), Guide.ylabel(""),
+              Guide.title("Residuals (%) vs. Fitted Values"))
 
   hist1 = plot(x = res, Geom.histogram, Guide.xlabel("Residuals"))
   hist2 = plot(x = rem, Geom.histogram, Guide.xlabel("Residuals (%)"))	 
