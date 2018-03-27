@@ -113,6 +113,8 @@ fr[1:10, [:price, :mpg, :weight, :fit, :residual, :residual_margin]]
 
 ## 5. validate()
 
+### Case 1: OLS
+
 ```julia
 validate(model_lm, false) # By default, the output (dataframe = false) returns an array. 
                           # Set to "true" for a dataframe.
@@ -133,6 +135,29 @@ validate(model_lm, false) # By default, the output (dataframe = false) returns a
 |  :residual_mean   | [-0.0]      | 
 |  :residual_median | [-503.983]  | 
 |  :residual_sd     | [2479.35]   | 
+
+### Case 2: GLM (logit)
+
+```julia
+testf = function(x)
+    if (x == "Domestic")
+		0
+    else
+		1
+    end
+end
+
+auto[:foreign2] = testf.(auto[:foreign])
+model_glm = fit(GeneralizedLinearModel, @formula(foreign2 ~ mpg + weight), auto, Binomial())
+```
+
+|                     |              | 
+|---------------------|--------------| 
+| :n                  |  [74.0]      | 
+|  :deviance_residual |   [54.3503]  | 
+|  :aer               |   [0.013514] | 
+
+
 
 ## 6. Conclusion
 
