@@ -25,11 +25,15 @@ Produce common model statistics such as R^2, RMSE, and MPE in a vector. The mode
   
   residual_sd     = Standard Deviation of the Residual.  
   
+  residual_se     = Standard Error of the Residual.  
+  
   rmse            = Root Mean Square Error.  
   
   rsq             = R-Squared.  
   
   sdpe            = Standard Deviation of the Percentage Error.  
+  
+  sepe            = Standard Error of the Percentage Error.  
   
 # Examples
 See https://github.com/robertschnitman/diagnoserjl.
@@ -55,7 +59,7 @@ function validate(model, dataframe = false)
 
   ### 2. Common Statistics ###
   #  # Need only on GLM models, not OLS.
-  n               = nobs(model)
+  n      = nobs(model)
   depvar = model.mf.df[1]   # Same as above.
   yhat   = predict(model)
 
@@ -72,15 +76,17 @@ function validate(model, dataframe = false)
 	medianpe        = median(r./depvar)
 	mpe             = mean(r./depvar)
 	sdpe            = std(r./depvar)
+	sepe            = sdpe/sqrt(n)
 	
 	residual_median = median(r)
 	residual_mean   = mean(r)
 	residual_sd     = std(r)
+	residual_se     = residual_sd/sqrt(n)
 	rmse            = sqrt(mean(r.^2))
 	rsq             = r2(model)
 	ar2             = adjr2(model)
 	
-	output = DataFrame(n = n, ar2 = ar2, r2 = rsq, rmse = rmse, mad = mad, mae = mae, medianpe = medianpe, mpe = mpe, sdpe = sdpe, residual_mean = residual_mean, residual_median = residual_median, residual_sd = residual_sd)    
+	output = DataFrame(n = n, ar2 = ar2, r2 = rsq, rmse = rmse, mad = mad, mae = mae, medianpe = medianpe, mpe = mpe, sdpe = sdpe, sepe = sepe, residual_mean = residual_mean, residual_median = residual_median, residual_sd = residual_sd, residual_se = residual_se)    
     
   elseif contains(modeltype, "Binomial")
     aer = function(y, yhat)
