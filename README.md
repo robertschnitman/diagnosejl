@@ -132,9 +132,12 @@ validate(model_lm, false) # By default, the output (dataframe = false) returns a
 |  :medianpe        | [-0.105916] | 
 |  :mpe             | [-0.11274]  | 
 |  :sdpe            | [0.358649]  | 
+|  :sepe            | [0.041692]  | 
 |  :residual_mean   | [-0.0]      | 
 |  :residual_median | [-503.983]  | 
 |  :residual_sd     | [2479.35]   | 
+|  :residual_se     | [288.219]   | 
+
 
 ### Case 2: GLM (logit)
 
