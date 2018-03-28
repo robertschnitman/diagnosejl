@@ -12,7 +12,7 @@ fit = Fitted Values based on model object.
 
 residual = Model residuals.  
 
-residual_margin = Model residuals in percentage (proportion) form.
+residual_pct = Model residuals in percentage (proportion) form.
 
 # Examples
 See https://github.com/robertschnitman/diagnoserjl.
@@ -40,12 +40,12 @@ function fitres(model, data = nothing)
   fit = predict(model)   # Fitted values.
   res = residuals(model) # Residuals.
   act = res + fit        # Actual values.
-  rem = res./act         # Residuals Margins (Residuals %). The dot(.) vectorizes the division.
+  rem = res./act         # Residuals Margin (Residuals %). The dot(.) vectorizes the division.
 
 ### 2. Return array or merged DataFrame ###  
   datatype = string(typeof(data))
   
-  fitresm = DataFrame(fit = fit, residual = res, residual_margin = rem)
+  fitresm = DataFrame(fit = fit, residual = res, residual_pct = rem)
 
   if (data == nothing)  
   
