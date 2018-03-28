@@ -42,20 +42,15 @@ function diagnose(model)
   
   
   ### 3. Print Output ###
-  rvf1 = plot(x = fit, y = res, 
-              Geom.point, Geom.smooth,
-	      Guide.xlabel("Fitted Values"), Guide.ylabel(""), 
-	      Guide.title("Residuals vs. Fitted Values"))
-			  
-  rvf2 = plot(x = fit, y = rem, 
-              Geom.point, Geom.smooth,
-	      Guide.xlabel("Fitted Values"), Guide.ylabel(""),
-              Guide.title("Residuals (%) vs. Fitted Values"))
+  rvf1 = scatter(fit, res, ylabel = "Residuals", title = "Residuals vs. Fitted Values")
+				
+  rvf2 = scatter(fit, rem, ylabel = "Residuals Margin (%)", title = "Residuals (%) vs. Fitted Values")
 
-  hist1 = plot(x = res, Geom.histogram, Guide.xlabel("Residuals"))
-  hist2 = plot(x = rem, Geom.histogram, Guide.xlabel("Residuals (%)"))	 
+  hist1 = histogram(res, xlabel = "Residuals", ylabel = "Frequency", bins = length(fit))
+  hist2 = histogram(rem, xlabel = "Residuals Margin (%)", ylabel = "Frequency", bins = length(fit))
   
-  gridstack([rvf1 rvf2; hist1 hist2])
+  # gridstack([rvf1 rvf2; hist1 hist2])
+  plot(rvf1, rvf2, hist1, hist2, layout = (2,2), legend = false)
   
 end
 
