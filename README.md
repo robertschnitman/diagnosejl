@@ -60,11 +60,11 @@ modeldf(model_lm, 0.95) # default confidence interval is 0.95.
 ## 4. fitres()
 
 ```julia
-fitres(model_lm) # Outputs a dataframe: fitted values, residuals, and residuals margin (i.e. residuals %).
+fitres(model_lm) # Outputs a dataframe: fitted values, residuals, and residuals %.
 ```
 |     |         |           |                  | 
 |-----|---------|-----------|------------------| 
-| Row |  fit    |  residual |  residual_margin | 
+| Row |  fit    |  residual |  residual_pct    | 
 | 1   | 5974.22 | -1875.22  | -0.457482        | 
 | 2   | 6955.33 | -2206.33  | -0.464589        | 
 | 3   | 5467.72 | -1668.72  | -0.439251        | 
@@ -94,10 +94,10 @@ fitres(model_lm) # Outputs a dataframe: fitted values, residuals, and residuals 
 fr = fitres(model_lm, auto) # If the original dataset from the model is specified,
                             #   then the fitted values & residuals are merged with it.
                             
-fr[1:10, [:price, :mpg, :weight, :fit, :residual, :residual_margin]]
+fr[1:10, [:price, :mpg, :weight, :fit, :residual, :residual_pct]]
 
 ```
-| Row |  price |  mpg |  weight |  fit    |  residual  | residual_margin | 
+| Row |  price |  mpg |  weight |  fit    |  residual  | residual_pct    | 
 |-----|--------|------|---------|---------|------------|-----------------| 
 | 1   | 4099   | 22   | 2930    | 5974.22 | -1875.22   | -0.457482       | 
 | 2   | 4749   | 17   | 3350    | 6955.33 | -2206.33   | -0.464589       | 
