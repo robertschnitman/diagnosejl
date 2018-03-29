@@ -5,7 +5,7 @@ Generate fitted values and residuals into one array (or merge with a DataFrame).
 
 INPUT: GLM object.
 
-OUTPUT: array (or DataFrame if dataframe is set to a DataFrame object)).
+OUTPUT: DataFrame.
 
 # Definitions
 fit = Fitted Values based on model object.  
@@ -26,7 +26,7 @@ See https://github.com/robertschnitman/diagnoserjl.
 ### PURPOSE: Generate fitted values and residuals into one array (or merge with a DataFrame).
 ###
 ### INPUT: GLM object.  
-### OUTPUT: array (or DataFrame if dataframe is set to a DataFrame object).
+### OUTPUT: DataFrame.
 ###
 ### RECOMMENDED CITATION:
 ###  Schnitman, Robert (2018). fitres.jl. https://github.com/robertschnitman/diagnoserjl
@@ -50,10 +50,10 @@ function fitres(model, data = nothing)
   if (data == nothing)  
   
     fitresm # Array was the original plan a la` the matrix output in its R equivalent, 
-	    #   but unnamed column headers in base Julia was a problem (i.e. which 
-	    #   column belongs to fitted values, etc?).
-	    # NamedArrays.jl could be an option, but DataFrames has more user reach.
-	    # Users can always use convert() to obtain an Array instead.
+            #   but unnamed column headers in base Julia was a problem (i.e. which 
+            #   column belongs to fitted values, etc?).
+            # NamedArrays.jl could be an option, but DataFrames has more user reach.
+            # Users can always use convert() to obtain an Array instead.
 	
   elseif (datatype == "DataFrames.DataFrame")    
 	
