@@ -12,6 +12,7 @@
 4. modeldf()
 5. validate()
 6. Conclusion
+7. References
 
 ## 0. Installation (*under construction*)
 
@@ -33,6 +34,8 @@
 Based on the original R library, `diagnoser` (https://github.com/robertschnitman/diagnoser).
 
 Motivation: make an equivalent package for Julia for pedagogical purposes and to take advantage of its capabilities.
+
+Tables in the sections below were created with a Markdown table converter (Donat Studios 2017).
 
 ## 2. diagnose()
 ```julia
@@ -142,7 +145,7 @@ validate(model_lm, false) # By default, the output (dataframe = false) returns a
 ### Case 2: GLM (logit)
 
 ```julia
-testf = function(x)
+testf = function(x)      # Setting up a binary variable for a logistic regression.
     if (x == "Domestic")
 		0
     else
@@ -152,18 +155,28 @@ end
 
 auto[:foreign2] = testf.(auto[:foreign])
 model_glm = fit(GeneralizedLinearModel, @formula(foreign2 ~ mpg + weight), auto, Binomial())
+
+validate(model_glm, true) # dataframe = true --> outputs dataframe
 ```
 
-|                     |              | 
-|---------------------|--------------| 
-| :n                  |  [74.0]      | 
-|  :deviance_residual |   [54.3503]  | 
-|  :aer               |   [0.013514] | 
+|     |                    |             | 
+|-----|--------------------|-------------| 
+| Row |  statistic         |  value      | 
+| 1   |  n                 |  [74.0]     | 
+| 2   |  deviance_residual |  [54.3503]  | 
+| 3   |  aer               |  [0.013514] | 
+
 
 
 
 ## 6. Conclusion
 
-The hope of this library is  to (1) minimize the programming tedium in statistical reporting; (2) assist people in diagnosing the validity of their results; and (3) inspire developers and end-users alike to apply Julia in their work.
+The hope of this library is to (1) minimize the programming tedium in statistical reporting; (2) assist people in diagnosing the validity of their results; and (3) inspire developers and end-users alike to apply Julia in their work.
+
+## 7. References
+
+Schnitman, Robert (2017). diagnoser v0.0.2.5. https://github.com/robertschnitman/diagnoser
+
+Donat Studios (2017). *CSV To Markdown Table Generator*. https://donatstudios.com/CsvToMarkdownTable
 
 *End of Document*
