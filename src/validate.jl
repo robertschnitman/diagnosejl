@@ -5,35 +5,37 @@
 Produce common model statistics such as R^2, RMSE, and MPE in a vector. The model input is a GLM object, outputting to an array if dataframe = false.
 
 # Definitions
-  aer             = Apparent Error Rate, defined as the proportion of misclassifications relative to total number of cases.
+  aer               = Apparent Error Rate, defined as the proportion of misclassifications relative to total number of cases.
 
-  ar2             = Adjusted R-Squared.  
+  ar2               = Adjusted R-Squared.  
   
-  mad             = Median Absolute Deviation.  
+  deviance_residual = Residual Deviance, which uses deviance() from the GLM library.
   
-  mae             = Mean Absolute Error.  
+  mad               = Median Absolute Deviation.  
   
-  medianpe        = Median Percent Error.
+  mae               = Mean Absolute Error.  
   
-  mpe             = Mean Percentage Error.  
+  medianpe          = Median Percent Error.
   
-  n               = Number of Observations (that are used in the model object).  
+  mpe               = Mean Percentage Error.  
   
-  residual_mean   = Mean Residual.  
+  n                 = Number of Observations (that are used in the model object).  
   
-  residual_median = Median Residual.  
+  residual_mean     = Mean Residual.  
   
-  residual_sd     = Standard Deviation of the Residual.  
+  residual_median   = Median Residual.  
   
-  residual_se     = Standard Error of the Residual.  
+  residual_sd       = Standard Deviation of the Residual.  
   
-  rmse            = Root Mean Square Error.  
+  residual_se       = Standard Error of the Residual.  
   
-  rsq             = R-Squared.  
+  rmse              = Root Mean Square Error.  
   
-  sdpe            = Standard Deviation of the Percentage Error.  
+  rsq               = R-Squared.  
   
-  sepe            = Standard Error of the Percentage Error.  
+  sdpe              = Standard Deviation of the Percentage Error.  
+  
+  sepe              = Standard Error of the Percentage Error.  
   
 # Examples
 See https://github.com/robertschnitman/diagnoserjl.
