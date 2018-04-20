@@ -40,7 +40,7 @@ function fitres(model, data = nothing)
   fit = predict(model)   # Fitted values.
   res = residuals(model) # Residuals.
   act = res + fit        # Actual values.
-  rem = res./act         # Residuals Margin (Residuals %). The dot(.) vectorizes the division.
+  rem = res./act         # Residuals Margin (Residuals %). The dot (.) vectorizes the division.
 
 ### 2. Return array or merged DataFrame ###  
   datatype = string(typeof(data))
