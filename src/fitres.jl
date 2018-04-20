@@ -23,7 +23,7 @@ See https://github.com/robertschnitman/diagnoserjl.
 ### Robert Schnitman
 ### 2018-03-12
 ###
-### PURPOSE: Generate fitted values and residuals into one array (or merge with a DataFrame).
+### PURPOSE: Generate fitted values and residuals into a data frame.
 ###
 ### INPUT: GLM object.  
 ### OUTPUT: DataFrame.
