@@ -90,11 +90,7 @@ function validate(model, dataframe = false)
 	
 	output = DataFrame(n = n, ar2 = ar2, r2 = rsq, rmse = rmse, mad = mad, mae = mae, medianpe = medianpe, mpe = mpe, sdpe = sdpe, sepe = sepe, residual_mean = residual_mean, residual_median = residual_median, residual_sd = residual_sd, residual_se = residual_se)    
     
-  elseif contains(modeltype, "Binomial")
-    aer = function(y, yhat)
-	  length(yhat[yhat != y])/length(y)
-    end
-	
+  elseif contains(modeltype, "Binomial")	
     aer = length(yhat[yhat != depvar])/length(depvar)
 	
 	output = DataFrame(n = n, deviance_residual = deviance(model), aer = aer) 
