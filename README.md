@@ -23,7 +23,7 @@
 #   GLM        ≥ 0.8.1
 #   Plots      ≥ 0.15.1
   
-Pkg.clone("https://github.com/robertschnitman/diagnoserjl")
+Pkg.clone("https://github.com/robertschnitman/diagnoserjl.git")
 ```
 
 ## 1. Introduction
