@@ -14,20 +14,16 @@
 6. Conclusion
 7. References
 
-## 0. Installation (*under construction*)
+## 0. Installation
 
 ```julia
-# Proposed installation instructions are as follows.
-
 # Julia ≥ 0.6.2.
 # Package imports
 #   DataFrames ≥ 0.10.1
 #   GLM        ≥ 0.8.1
 #   Plots      ≥ 0.15.1
   
-# Pkg.clone("https://github.com/robertschnitman/diagnoserjl")
-# using diagnoserjl # load library.
-
+Pkg.clone("https://github.com/robertschnitman/diagnoserjl")
 ```
 
 ## 1. Introduction
